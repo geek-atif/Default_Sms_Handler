@@ -56,10 +56,9 @@ class MainActivity : AppCompatActivity() {
                 // check whether your app is already holding the default SMS app role.
                 val isRoleHeld = roleManager.isRoleHeld(role)
                 if (!isRoleHeld) {
-                    val roleRequestIntent = roleManager.createRequestRoleIntent(role)
                     intentLauncher.launch(roleManager.createRequestRoleIntent(role))
                 } else {
-
+                    // Request permission for SMS
                 }
             }
         } else {
